@@ -1,0 +1,117 @@
+.about {
+    min-height: 100vh;
+    width: 100%;
+    padding: 2rem 15px; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    overflow-x: hidden; 
+}
+
+@media screen and (min-width: 900px) {
+    .about {
+        flex-direction: row; 
+        padding: 0 10%;
+        gap: 4rem;
+    }
+}
+
+
+.aboutAnimateWrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.aboutImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+}
+
+.aboutImage .aboutBg {
+    background: linear-gradient(130deg, rgb(97, 16, 97), rgb(89, 32, 77), rgba(2, 2, 97, 0.626));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(140px, 65vw, 22rem); 
+    height: clamp(140px, 65vw, 22rem);
+    
+    border: 0.3rem solid rgb(144, 10, 147);
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+.aboutImage .bg {
+    object-fit: cover;
+    width: 85%; 
+    height: 85%;
+    border-radius: 50%;
+    background:
+        linear-gradient(120deg, rgba(72,4,146,.95), rgba(214,30,199,.98)) border-box,
+        #000 padding-box;
+    border: 0.35rem solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.aboutSection h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.abouthr1 {
+    background: linear-gradient(160deg, rgba(134, 5, 178, 0.953) 40%, rgb(231, 11, 198) 60%);
+    width: 70px;
+    height: 4px;
+    border: none;
+    border-radius: 3rem;
+    margin: 0 auto;
+}
+
+.aboutSection p {
+    width: 100%;
+    max-width: 650px;
+    color: rgb(176, 174, 174);
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    line-height: 1.6;
+    margin-top: 1.2rem;
+}
+
+@media (max-width: 300px) {
+    .about {
+        gap: 1.5rem;
+        padding: 1rem 8px;
+    }
+
+    .aboutImage .aboutBg {
+        width: 130px; 
+        height: 130px;
+    }
+
+    .aboutSection h1 {
+        font-size: 1.6rem;
+    }
+
+    .aboutSection p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}

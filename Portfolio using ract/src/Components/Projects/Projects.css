@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#projects {
+    width: 100%;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    padding: clamp(1rem, 5vw, 4rem) 8px;
+    margin-top: 2rem;
+}
+
+.projectHeading {
+    font-size: clamp(1.4rem, 8vw, 3rem);
+    font-weight: 700;
+    color: rgb(196, 190, 190);
+    text-align: center;
+    width: 100%;
+}
+
+.projectHeading span {
+    color: rgba(201, 74, 244, 0.953);
+}
+
+.projectLine {
+    background: linear-gradient(160deg, rgba(134, 5, 178, 0.953) 40%, rgb(231, 11, 198) 60%);
+    width: clamp(50px, 15vw, 150px);
+    height: 4px;
+    border: none;
+    border-radius: 3rem;
+    margin: 1rem auto;
+}
+
+.paraAnimate {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectPara {
+    width: clamp(95%, 85vw, 60%);
+    font-size: clamp(0.85rem, 4vw, 1.15rem);
+    color: rgb(186, 185, 185);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.projectBox {
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 3rem;
+    display: grid;
+    justify-items: center; 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+    box-sizing: border-box;
+}
+
+@media (min-width: 601px) {
+    .projectBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1001px) {
+    .projectBox {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+.projectBox .projectShow {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0; 
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgb(96, 3, 108);
+    border-radius: 1.2rem;
+    padding: clamp(0.7rem, 3vw, 1.2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.projectBox .projectShow:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(134, 5, 178, 0.4);
+    border-color: rgba(201, 74, 244, 1);
+}
+
+.projectImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    display: block;
+}
+
+.projectName {
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    color: #fff;
+    margin: 1rem 0 0.5rem 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.projectDescription {
+    color: #aaa;
+    font-size: clamp(0.8rem, 3vw, 0.9rem);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.projectTools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.tool {
+    font-size: 0.7rem;
+    background: rgba(140, 44, 172, 0.15);
+    padding: 0.2rem 0.6rem;
+    border-radius: 2rem;
+    color: #d8b4fe;
+    border: 1px solid rgba(140, 44, 172, 0.3);
+}
+
+.projectView {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: #e879f9;
+    padding: 0.6rem 1rem;
+    border: 1px solid #6b21a8;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+}
+.projectView:hover{
+    box-shadow: 0 0 0.3rem 0.2rem #6b21a8;
+}
+@media (max-width: 300px) {
+    #projects {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .projectBox .projectShow {
+        margin: 0 auto; 
+        padding: 0.6rem;
+    }
+
+    .fade-left, .fade-right {
+        transform: translate(0, 0) !important;
+        opacity: 0;
+    }
+    .show.fade-left, .show.fade-right {
+        transform: translate(0, 0) !important;
+        opacity: 1;
+    }
+
+    .projectView {
+        width: 100%; 
+        justify-content: center;
+    }
+}

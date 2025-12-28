@@ -1,0 +1,56 @@
+import React from 'react'
+import './Skills.css'
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
+import { BsBootstrap } from "react-icons/bs";
+import { RiTailwindCssLine } from "react-icons/ri";
+import { DiNodejs } from "react-icons/di";
+import { RiNextjsFill } from "react-icons/ri";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import AnimateOnScroll from '../Animations/AnimateOnScroll';
+const Skills = () => {
+    const skill =[{id:1,logo:<FaHtml5 />,title:"HTML"},
+        {id:1,logo:<FaCss3 />,title:"CSS"},
+        {id:1,logo:<IoLogoJavascript />,title:"JavaScript"},
+        {id:1,logo:<FaReact />,title:"React"},
+        {id:1,logo:<BsBootstrap />,title:"Bootstrap"},
+        {id:1,logo:<RiTailwindCssLine />,title:"Tailwind CSS"},
+        {id:1,logo:<DiNodejs />,title:"Node.js"},
+        {id:1,logo:<RiNextjsFill />,title:"Next.js"},
+        {id:1,logo:<SiExpress />,title:"Express.js"},
+        {id:1,logo:< SiMongodb />,title:"Mongodb"},
+    ]
+  return (
+    <>
+    <div className='skills'>
+     <div className="heading-wrapper">
+  <AnimateOnScroll animation='zoom-in' duration='1s'>
+    <h1>My <span> Skills</span></h1>
+  </AnimateOnScroll>
+  <hr />
+</div>
+      
+      <div className="skillsBox ">
+        
+        {skill.map((item)=>(
+          <AnimateOnScroll animation='fade-up' duration='1s'>
+            <div className="tech-grid" title={item.title}>
+        <div class="icon" >
+            {item.logo}        
+</div>
+ <h3>{item.title}</h3>
+</div>
+</AnimateOnScroll>
+        ))}
+    </div>
+   
+    </div>
+
+    </>
+  )
+}
+
+export default Skills

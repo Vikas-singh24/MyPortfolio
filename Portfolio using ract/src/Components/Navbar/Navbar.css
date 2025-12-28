@@ -1,0 +1,149 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    height: 5rem;
+    width: 100%;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    position: sticky;
+    top: 0; 
+    left: 0;
+    margin: 0;
+    
+    z-index: 1000;
+    background: rgba(27, 26, 26, 0.756);
+    backdrop-filter: blur(5px);
+    box-sizing: border-box;
+}
+.navbar h1 {
+    font-size: clamp(1.3rem, 3vw, 3rem);
+    font-weight: 800;
+    color: transparent;
+    background: linear-gradient(40deg,rgba(134, 5, 178, 0.953) 40%,rgb(171, 127, 209) 60%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    white-space: nowrap;
+}
+
+.desktopMenuListItem {
+    margin: 1rem;
+    color: white;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.desktopMenuListItem::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(201, 74, 244, 0.953);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.desktopMenuListItem:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.desktopMenuListItem:not(:hover)::after {
+    transform-origin: right;
+}
+
+.desktopMenuListItem:hover, .active {
+    color: rgba(201, 74, 244, 0.953);
+}
+
+.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.mobMenu {
+    display: none;
+    font-size: 3rem;
+    color: rgba(124, 5, 194, 0.988);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.navMenu {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    padding: 0.5rem;
+    height: auto;
+    min-width: 15rem;
+    background: rgb(40,40,40);
+    border-radius: 1rem;
+    flex-direction: column;
+}
+
+.listItem {
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(30,30,30);
+    border-radius: 0.8rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 980px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .desktopMenu {
+        display: none;
+    }
+    .mobMenu {
+        display: flex;
+    }
+    .navMenu {
+        right: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .navbar {
+        height: 4rem;
+        padding: 0.5rem 0.3rem;
+    }
+
+    .navbar h1 {
+        font-size: 0.85rem !important;
+    }
+
+    .mobMenu {
+        font-size: 1.5rem;
+    }
+
+    .navMenu {
+        top: 3.5rem;
+        right: 0.2rem;
+        min-width: 10rem;
+        padding: 0.3rem;
+    }
+
+    .listItem {
+        padding: 0.4rem 1rem;
+        margin: 0.15rem;
+        font-size: 0.8rem;
+    }
+}
