@@ -4,7 +4,7 @@ import { Link } from 'react-scroll'
 import { IoBagOutline } from "react-icons/io5";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowRightLong } from "react-icons/fa6";
-import resume from '../../assets/Vikas_iimt_4.pdf'
+import resume from '../../assets/Vikas_resume_FB.pdf'
 import AnimateOnScroll from '../Animations/AnimateOnScroll';
 
 const Home = () => {
