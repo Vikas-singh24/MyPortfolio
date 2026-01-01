@@ -17,6 +17,11 @@ const Navbar = () => {
         setShowMenu(false);
       }
     };
+    const handleScroll = () => {
+    if (showMenu) {
+      setShowMenu(false);
+    }
+  };
 
     const handleResize = () => {
       if (window.innerWidth > 700) {
@@ -26,11 +31,13 @@ const Navbar = () => {
 
 
     document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
 
     
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
   }, [showMenu]);
