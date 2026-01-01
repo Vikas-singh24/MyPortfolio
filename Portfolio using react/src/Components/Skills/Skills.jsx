@@ -7,21 +7,21 @@ import { FaReact } from "react-icons/fa";
 import { BsBootstrap } from "react-icons/bs";
 import { RiTailwindCssLine } from "react-icons/ri";
 import { DiNodejs } from "react-icons/di";
-import { RiNextjsFill } from "react-icons/ri";
 import { SiExpress } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import AnimateOnScroll from '../Animations/AnimateOnScroll';
+import { SiMysql } from "react-icons/si";
 const Skills = () => {
     const skill =[{id:1,logo:<FaHtml5 />,title:"HTML"},
-        {id:1,logo:<FaCss3 />,title:"CSS"},
-        {id:1,logo:<IoLogoJavascript />,title:"JavaScript"},
-        {id:1,logo:<FaReact />,title:"React"},
-        {id:1,logo:<BsBootstrap />,title:"Bootstrap"},
-        {id:1,logo:<RiTailwindCssLine />,title:"Tailwind CSS"},
-        {id:1,logo:<DiNodejs />,title:"Node.js"},
-        {id:1,logo:<RiNextjsFill />,title:"Next.js"},
-        {id:1,logo:<SiExpress />,title:"Express.js"},
-        {id:1,logo:< SiMongodb />,title:"Mongodb"},
+        {id:2,logo:<FaCss3 />,title:"CSS"},
+        {id:3,logo:<IoLogoJavascript />,title:"JavaScript"},
+        {id:4,logo:<FaReact />,title:"React"},
+        {id:5,logo:<BsBootstrap />,title:"Bootstrap"},
+        {id:6,logo:<RiTailwindCssLine />,title:"Tailwind CSS"},
+        {id:7,logo:<DiNodejs />,title:"Node.js"},
+        {id:8,logo:<SiExpress />,title:"Express.js"},
+        {id:9,logo:< SiMongodb />,title:"Mongodb"},
+        {id:10,logo:< SiMysql />,title:"MySql"}
     ]
   return (
     <>

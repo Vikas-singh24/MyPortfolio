@@ -33,7 +33,7 @@
 
 .hello {
     font-size: clamp(1rem, 6vw, 2.5rem);
-    color: rgb(186, 185, 185);
+    
 }
 
 .homeName {

@@ -5,6 +5,7 @@ const AnimateOnScroll = ({
   animation = "fade-up",
   delay = "0s",
   duration = "0.8s",
+  
   once = false,
   className="",
   id,

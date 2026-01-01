@@ -27,7 +27,7 @@ const Home = () => {
             <a href={resume} target='_blank'><button className="cvBtn homeBtn"><MdOutlineFileDownload /> Download CV</button></a>
             </AnimateOnScroll>
             <AnimateOnScroll animation='fade-right' duration='0.6s'>
-            <Link activeClass="active" to="projects" spy={true} smooth={true} offset={-85} duration={500}><button className='workBtn homeBtn'>View My Work <FaArrowRightLong /></button></Link>
+            <Link activeClass="active" to="projects" spy={true} smooth={true} offset={-45} duration={500}><button className='workBtn homeBtn'>View My Work <FaArrowRightLong /></button></Link>
             </AnimateOnScroll>
         </div>
       </div>

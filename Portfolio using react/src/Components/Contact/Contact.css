@@ -91,6 +91,7 @@
     box-sizing: border-box !important; 
     font-size: 0.9rem;
     display: block;
+    outline: none;
 }
 
 .contactFormDetails .msg {

@@ -1,0 +1,144 @@
+import React, { useState } from 'react'; // Added useState
+import './Contact.css';
+import { FiSend, FiPhone } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import { GrLocation } from "react-icons/gr";
+import { SiGithub } from "react-icons/si";
+import { TiSocialLinkedin } from "react-icons/ti";
+import AnimateOnScroll from '../Animations/AnimateOnScroll';
+
+const Contact = () => {
+ const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+  event.preventDefault();
+  setResult("Sending....");
+  
+  const formData = new FormData(event.target);
+  formData.append("access_key", import.meta.env.VITE_CONTACTFORM_KEY);
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    alert("Message Sent Successfully!");
+    event.target.reset(); 
+  } else {
+    console.log("Error", data);
+    alert(data.message);
+  }
+};
+
+  return (
+    <>
+      <div id='contactPage'> 
+        <AnimateOnScroll animation='zoom-in' duration='1s'>
+          <h1 className='contactPageTitle'>Get In <span>Touch</span></h1>
+        </AnimateOnScroll>
+        <AnimateOnScroll animation='zoom-in' duration='1s'>
+          <hr id='titleHr'/>
+        </AnimateOnScroll>
+        
+        <br />
+
+        <p>
+          <AnimateOnScroll animation='fade-right' duration='1s'>
+            Have a project in mind or just want to say hello? Drop me a message and let's create something amazing together
+          </AnimateOnScroll>
+        </p>
+
+        <div className="contactBox">
+          <div className="contactDetails">
+           
+            <form className='contactForm' onSubmit={onSubmit}>
+              
+              {/*  Honeypot Spam Protection (Hidden from users) */}
+              <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+
+              <div id="nameSection" className='contactFormDetails'>
+                <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.7s'>
+                  <label>Name</label>
+                
+                  <input className='name' name="name" type="text" placeholder='Your Name' required/>
+                </AnimateOnScroll>
+              </div>
+                
+              <div id="emailSection" className='contactFormDetails'>
+                <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.8s'>
+                  <label>Email</label>
+                  
+                  <input className='email' name="email" type="email" placeholder='Your Email' required/>
+                </AnimateOnScroll>
+              </div>
+              
+              <div id="messageSection" className='contactFormDetails'>
+                <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.9s'>
+                  <label>Message</label>
+                 
+                  <textarea className='msg' name="message" placeholder='Tell Me About Your Project...' rows='7' required></textarea>
+                </AnimateOnScroll>
+              </div>
+                
+              <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='1s'>
+                <button type='submit' className='submitBtn'>
+                  Send Message <FiSend id='sendIcon'/>
+                </button>
+              </AnimateOnScroll>
+
+             
+              
+              
+            </form>
+          </div>
+
+          <div className="letsConnect">
+            <h2><AnimateOnScroll animation='animate zoom-in' duration='0.9s'> Let's Connect</AnimateOnScroll></h2>
+            <p><AnimateOnScroll animation='fade-right zoom-in' duration='1s'>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities. I'd love to hear from you</AnimateOnScroll></p>
+             
+            <AnimateOnScroll id="myEmailBox" className='contactMeBox' animation='fade-right' duration='0.8s'>
+              <div className="contactLogo"><MdOutlineEmail/></div>
+              <div className="contactMe">
+                <h3>Email</h3>
+                <p>vksingh.2024k@gmail.com</p>
+              </div>
+            </AnimateOnScroll>
+             
+            <AnimateOnScroll id="myNumberBox" className='contactMeBox' animation='fade-right' duration='0.9s'>
+              <div className="contactLogo"><FiPhone/></div>
+              <div className="contactMe">
+                <h3>Phone</h3>
+                <p>+91 9718638076</p>
+              </div> 
+            </AnimateOnScroll>
+
+            <AnimateOnScroll id="myLocationBox" className='contactMeBox' animation='fade-right' duration='1s'>
+              <div className="contactLogo"><GrLocation/></div>
+              <div className="contactMe">
+                <h3>Location</h3>
+                <p>Delhi, India</p>
+              </div>
+            </AnimateOnScroll>
+
+            <div className="followMe">
+              <h3><AnimateOnScroll animation='fade-right zoom-in' duration='1s'>Follow Me</AnimateOnScroll></h3>
+              <div className="followBtns" >
+                <AnimateOnScroll animation='fade-up' duration='0.8s' className="followLink">
+                  <a href="https://github.com/Vikas-singh24" target='_blank' rel="noreferrer"><SiGithub/></a>
+                </AnimateOnScroll>
+                <AnimateOnScroll animation='fade-up' duration='1s' className="followLink">
+                  <a href="https://www.linkedin.com/..." target='_blank' rel="noreferrer"><TiSocialLinkedin/></a> 
+                </AnimateOnScroll>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Contact;
