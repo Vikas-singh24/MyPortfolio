@@ -33,12 +33,11 @@ const Skills = () => {
   <hr />
 </div>
       
-      <div className="skillsBox ">
-        
+      <div className="skillsBox "> 
         {skill.map((item)=>(
-          <AnimateOnScroll animation='fade-up' duration='1s'>
-            <div className="tech-grid" title={item.title}>
-        <div class="icon" >
+          <AnimateOnScroll animation='fade-up' key={item.id} duration='1s'>
+            <div className="tech-grid"  title={item.title}>
+        <div className="icon" >
             {item.logo}        
 </div>
  <h3>{item.title}</h3>

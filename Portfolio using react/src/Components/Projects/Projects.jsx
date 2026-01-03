@@ -34,7 +34,7 @@ const Projects = () => {
 
       <div className="projectBox">
         {ProjectLists.map((item)=>(
-             <AnimateOnScroll className='projectShow' animation='animate' duration='0.5s'>
+             <AnimateOnScroll className='projectShow' key={item.id} animation='animate' duration='0.5s'>
 
             <img className='projectImage' src={item.image} alt="" />
             <h2 className="projectName">{item.title}</h2>

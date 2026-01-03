@@ -8,28 +8,48 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import AnimateOnScroll from '../Animations/AnimateOnScroll';
 
 const Contact = () => {
- const [result, setResult] = useState("");
+  const [result, setResult] = useState("");
+  const [formData, setFormData] = useState({
+    name:"",
+    email:"",
+    message:""
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const onSubmit = async (event) => {
   event.preventDefault();
   setResult("Sending....");
-  
-  const formData = new FormData(event.target);
-  formData.append("access_key", import.meta.env.VITE_CONTACTFORM_KEY);
+  const data ={
+    access_key : import.meta.env.VITE_CONTACTFORM_KEY ,
+    ...formData
+  }
+  // const formData = new FormData(event.target);
+  // formData.append("access_key", import.meta.env.VITE_CONTACTFORM_KEY);
 
   const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    body: formData
+    // body: formData
+    headers :{
+      "Content-Type": "application/json"   
+    },
+     body: JSON.stringify(data)
   });
 
-  const data = await response.json();
+  const result = await response.json();
 
-  if (data.success) {
+  if (result.success) {
     alert("Message Sent Successfully!");
-    event.target.reset(); 
+    setFormData({ name: "", email: "", message: "" })
+    // event.target.reset(); 
   } else {
     console.log("Error", data);
-    alert(data.message);
+    alert(result.message);
   }
 };
 
@@ -45,11 +65,11 @@ const Contact = () => {
         
         <br />
 
-        <p>
+        <span>
           <AnimateOnScroll animation='fade-right' duration='1s'>
             Have a project in mind or just want to say hello? Drop me a message and let's create something amazing together
           </AnimateOnScroll>
-        </p>
+        </span>
 
         <div className="contactBox">
           <div className="contactDetails">
@@ -63,7 +83,7 @@ const Contact = () => {
                 <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.7s'>
                   <label>Name</label>
                 
-                  <input className='name' name="name" type="text" placeholder='Your Name' required/>
+                  <input className='name' name="name" type="text" value={formData.name} onChange={handleChange}placeholder='Your Name' required/>
                 </AnimateOnScroll>
               </div>
                 
@@ -71,7 +91,8 @@ const Contact = () => {
                 <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.8s'>
                   <label>Email</label>
                   
-                  <input className='email' name="email" type="email" placeholder='Your Email' required/>
+                  <input className='email' name="email" type="email" value={formData.email}
+    onChange={handleChange} placeholder='Your Email' required/>
                 </AnimateOnScroll>
               </div>
               
@@ -79,7 +100,8 @@ const Contact = () => {
                 <AnimateOnScroll className='contactFormDetails' animation='fade-left' duration='0.9s'>
                   <label>Message</label>
                  
-                  <textarea className='msg' name="message" placeholder='Tell Me About Your Project...' rows='7' required></textarea>
+                  <textarea className='msg' name="message"  value={formData.message}
+    onChange={handleChange} placeholder='Your Message...' rows='7' required></textarea>
                 </AnimateOnScroll>
               </div>
                 
@@ -97,7 +119,7 @@ const Contact = () => {
 
           <div className="letsConnect">
             <h2><AnimateOnScroll animation='animate zoom-in' duration='0.9s'> Let's Connect</AnimateOnScroll></h2>
-            <p><AnimateOnScroll animation='fade-right zoom-in' duration='1s'>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities. I'd love to hear from you</AnimateOnScroll></p>
+            <span><AnimateOnScroll animation='fade-right zoom-in' duration='1s'>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities. I'd love to hear from you</AnimateOnScroll></span>
              
             <AnimateOnScroll id="myEmailBox" className='contactMeBox' animation='fade-right' duration='0.8s'>
               <div className="contactLogo"><MdOutlineEmail/></div>
@@ -130,7 +152,7 @@ const Contact = () => {
                   <a href="https://github.com/Vikas-singh24" target='_blank' rel="noreferrer"><SiGithub/></a>
                 </AnimateOnScroll>
                 <AnimateOnScroll animation='fade-up' duration='1s' className="followLink">
-                  <a href="https://www.linkedin.com/..." target='_blank' rel="noreferrer"><TiSocialLinkedin/></a> 
+                  <a href="https://www.linkedin.com/in/vikas-kumar-singh-b25a60329?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target='_blank' rel="noreferrer"><TiSocialLinkedin/></a> 
                 </AnimateOnScroll>
               </div>
             </div>
