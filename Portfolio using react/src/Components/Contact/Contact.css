@@ -126,7 +126,9 @@
     font-size: 1.8rem;
     color: #fff;
 }
-
+.letsConnect > span{
+    color:   rgb(186, 185, 185); ;
+}
 .contactMeBox {
     width: 100%;
     display: flex;

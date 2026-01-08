@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Added useState
+import React, { useState } from 'react'; 
 import './Contact.css';
 import { FiSend, FiPhone } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
@@ -29,12 +29,10 @@ const Contact = () => {
     access_key : import.meta.env.VITE_CONTACTFORM_KEY ,
     ...formData
   }
-  // const formData = new FormData(event.target);
-  // formData.append("access_key", import.meta.env.VITE_CONTACTFORM_KEY);
+  
 
   const response = await fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    // body: formData
     headers :{
       "Content-Type": "application/json"   
     },
@@ -46,7 +44,7 @@ const Contact = () => {
   if (result.success) {
     alert("Message Sent Successfully!");
     setFormData({ name: "", email: "", message: "" })
-    // event.target.reset(); 
+   
   } else {
     console.log("Error", data);
     alert(result.message);
@@ -76,7 +74,7 @@ const Contact = () => {
            
             <form className='contactForm' onSubmit={onSubmit}>
               
-              {/*  Honeypot Spam Protection (Hidden from users) */}
+              
               <input type="checkbox" name="botcheck" style={{ display: "none" }} />
 
               <div id="nameSection" className='contactFormDetails'>
