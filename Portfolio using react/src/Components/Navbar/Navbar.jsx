@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 import { Link } from 'react-scroll' 
 import { IoMdMenu } from "react-icons/io";
-
+import logo from "../../assets/logo.png"
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef(null); 
@@ -46,7 +46,7 @@ const Navbar = () => {
     <>
   
     <div className='navbar' >
-      <h1>PORTFOLIO</h1>
+      <h2> <img width= '35vw' src={logo} alt="" /> Vikas</h2>
       
       <div className="desktopMenu">
         <Link activeClass="active" to="home" spy={true} smooth={true} offset={-100} duration={100}  className='desktopMenuListItem'>Home</Link>

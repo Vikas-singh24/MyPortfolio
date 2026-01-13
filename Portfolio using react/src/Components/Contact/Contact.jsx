@@ -6,6 +6,8 @@ import { GrLocation } from "react-icons/gr";
 import { SiGithub } from "react-icons/si";
 import { TiSocialLinkedin } from "react-icons/ti";
 import AnimateOnScroll from '../Animations/AnimateOnScroll';
+import { MdOutlineFileDownload } from "react-icons/md";
+import resume from '../../assets/Vikas_resume_FB.pdf'
 
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -119,22 +121,22 @@ const Contact = () => {
             <h2><AnimateOnScroll animation='animate zoom-in' duration='0.9s'> Let's Connect</AnimateOnScroll></h2>
             <span><AnimateOnScroll animation='fade-right zoom-in' duration='1s'>I'm always excited to work on new projects and collaborate with amazing people. Whether you have a specific project in mind or just want to explore possibilities. I'd love to hear from you</AnimateOnScroll></span>
              
-            <AnimateOnScroll id="myEmailBox" className='contactMeBox' animation='fade-right' duration='0.8s'>
+           
+             <a href={resume} target='_blank'>
+            <AnimateOnScroll id="myCvBox" className='contactMeBox' animation='fade-right' duration='0.9s'>
+              
+              <div className="contactLogo"><MdOutlineFileDownload /></div>
+               <button className="cvBtn"> Download CV</button>
+            </AnimateOnScroll>
+            </a>
+             <AnimateOnScroll id="myEmailBox" className='contactMeBox' animation='fade-right' duration='0.8s'>
               <div className="contactLogo"><MdOutlineEmail/></div>
               <div className="contactMe">
                 <h3>Email</h3>
                 <p>vksingh.2024k@gmail.com</p>
               </div>
             </AnimateOnScroll>
-             
-            <AnimateOnScroll id="myNumberBox" className='contactMeBox' animation='fade-right' duration='0.9s'>
-              <div className="contactLogo"><FiPhone/></div>
-              <div className="contactMe">
-                <h3>Phone</h3>
-                <p>+91 9718638076</p>
-              </div> 
-            </AnimateOnScroll>
-
+            
             <AnimateOnScroll id="myLocationBox" className='contactMeBox' animation='fade-right' duration='1s'>
               <div className="contactLogo"><GrLocation/></div>
               <div className="contactMe">

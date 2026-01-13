@@ -13,7 +13,7 @@
     box-sizing: border-box;
 }
 
-.navbar h1 {
+.navbar h2 {
     font-size: clamp(1.3rem, 3vw, 3rem);
     font-weight: 800;
     color: transparent;
@@ -21,6 +21,10 @@
     background-clip: text;
     -webkit-background-clip: text;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .desktopMenuListItem {
@@ -115,10 +119,12 @@
         padding: 0.5rem 0.3rem;
     }
 
-    .navbar h1 {
+    .navbar h2 {
         font-size: 0.85rem !important;
     }
-
+    h2 img{
+        width: 1.5rem;
+    }
     .mobMenu {
         font-size: 1.5rem;
     }

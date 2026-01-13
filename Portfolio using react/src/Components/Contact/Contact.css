@@ -1,8 +1,8 @@
 #contactPage {
-    min-height: 100vh;
+    min-height: 80vh;
     width: 100%;
     max-width: 1200px;
-    margin: 3rem auto 0 auto;
+    margin: 5rem auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,6 +150,21 @@
     border-radius: 8px;
     font-size: 1.1rem;
     color: white;
+}
+
+.cvBtn{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0rem;
+    border: none;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+   
+    
 }
 
 .contactMe h3 {

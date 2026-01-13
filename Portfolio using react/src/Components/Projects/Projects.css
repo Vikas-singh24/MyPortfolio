@@ -137,7 +137,10 @@
     color: #d8b4fe;
     border: 1px solid rgba(140, 44, 172, 0.3);
 }
-
+.projectViewBox{
+    display: flex;
+    gap: clamp(1rem,3vw,3rem);
+}
 .projectView {
     width: fit-content;
     display: flex;
