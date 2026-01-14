@@ -4,13 +4,53 @@
     overflow-x: hidden;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-attachment: fixed;
     z-index: 2;
     padding: 1rem 5px; 
+    gap: clamp(4rem,7vw,10rem);
+    padding-top:clamp(2.5rem,4vw,5rem);
+    /* gap: 10rem; */
+}
+.homeSkills{
+    width: 68%;
+    overflow: hidden;
+    white-space: nowrap;
+     border-radius: clamp(0.7rem,3vw,3rem);
+    /* box-shadow: 0 0 0.3rem 0.6rem rgb(234, 10, 234); */
+}
+.homeSkills .marquee{
+    display: flex;
+    width: max-content;
+    animation: scroll-left 10s linear infinite ;
+
 }
 
+.homeSkills .marquee span{
+    display: flex;
+    width: 100%;
+    font-size: clamp(1.2rem, 8vw, 3.5rem) ;
+    
+}
+.homeSkills .marquee span svg{
+    color: rgb(181, 11, 203);
+    font-size: clamp(1.5rem,8vw,3.5rem);
+    margin-inline: 2rem;
+  
+    ;
+}
+
+@keyframes scroll-left {
+    0%{
+        transform: translateX(0);
+
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
 .homeContent {
     width: 100%;
     max-width: 1200px;
@@ -98,7 +138,55 @@
     font-size: 1.1rem;
 }
 
+.aboutAnimateWrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.aboutImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
+}
+
+.aboutImage .aboutBg {
+    background: linear-gradient(130deg, rgb(97, 16, 97), rgb(89, 32, 77), rgba(2, 2, 97, 0.626));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(140px, 65vw, 22rem); 
+    height: clamp(140px, 65vw, 22rem);
+    
+    border: 0.3rem solid rgb(144, 10, 147);
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 1;
+}
+
+.aboutImage .bg {
+    object-fit: cover;
+    width: 85%; 
+    height: 85%;
+    border-radius: 50%;
+    background:
+        linear-gradient(120deg, rgba(72,4,146,.95), rgba(214,30,199,.98)) border-box,
+        #000 padding-box;
+    border: 0.35rem solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media  screen and (max-width:500px) {
+    #home{
+         min-height: calc(100vh - 10rem);
+    }
+}
+
 @media screen and (max-width: 350px) {
+    
     .btns {
         flex-direction: column; 
         width: 100%;
@@ -106,12 +194,14 @@
     .btns .animate, .btns .homeBtn, .btns a {
         width: 100% !important; 
     }
+    
 }
 
 
 @media screen and (max-width: 200px) {
     #home {
         padding: 0.5rem 3px;
+        padding-top: 2rem;
     }
 
     .homeText {
@@ -131,7 +221,7 @@
         padding: 0.4rem 0.5rem;
         font-size: 0.7rem; 
         gap: 0.3rem; 
-        border-radius: 0.5rem; 
+        border-radius: 1rem; 
     }
 
     .btns .homeBtn svg {

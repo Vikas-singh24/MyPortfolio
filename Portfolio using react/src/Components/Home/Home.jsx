@@ -3,13 +3,30 @@ import './Home.css'
 import { Link } from 'react-scroll'
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3 } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
+import { BsBootstrap } from "react-icons/bs";
+import { RiTailwindCssLine } from "react-icons/ri";
+import { DiNodejs } from "react-icons/di";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
 import resume from '../../assets/Vikas_resume_FB.pdf'
 import AnimateOnScroll from '../Animations/AnimateOnScroll';
+import bg from '../../assets/image.jpg'
 
 const Home = () => {
   return (
     <>
     <div id='home'> 
+      <div className="homeSkills">
+        
+        <div className="marquee">
+        <span> <FaReact/> <BsBootstrap/> <RiTailwindCssLine/> <DiNodejs/> <SiExpress/> <SiMongodb/> <IoLogoJavascript/> <FaHtml5/> <FaCss3/> </span>
+        <span> <FaReact/> <BsBootstrap/> <RiTailwindCssLine/> <DiNodejs/> <SiExpress/> <SiMongodb/> <IoLogoJavascript/> <FaHtml5/> <FaCss3/> </span>
+        </div>
+      </div>
       <div className="homeContent">
        <AnimateOnScroll animation='zoom-in' duration='1s'>
           <span className='homeText'><span className="hello">Hello,</span> I'm
@@ -29,6 +46,14 @@ const Home = () => {
         </div>
       </div>
      
+     <AnimateOnScroll className='aboutAnimateWrapper' animation='fade-left' duration='0.7s'>
+              <div className="aboutImage">
+            <div className="aboutBg">
+       <img src={bg} alt="" className='bg'/>
+       </div>
+       </div>
+       </AnimateOnScroll>
+
     </div>
 
     </>

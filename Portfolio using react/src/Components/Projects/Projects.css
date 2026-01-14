@@ -155,9 +155,14 @@
     cursor: pointer;
     transition: box-shadow 0.4s ease;
 }
+
+
+@media (hover: hover){
 .projectView:hover{
     box-shadow: 0 0 0.3rem 0.2rem #6b21a8;
 }
+}
+
 @media (max-width: 300px) {
     #projects {
         padding-left: 5px;
@@ -181,5 +186,11 @@
     .projectView {
         width: 100%; 
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 256px) {
+    .projectViewBox{
+        flex-direction: column;
     }
 }
